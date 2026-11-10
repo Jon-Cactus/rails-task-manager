@@ -1,0 +1,16 @@
+<div class="container">
+  <h1><%= @task.title %></h1>
+
+  <div class="card d-flex flex-row space-between justify-content-between align-items-center p-2 w-50">
+    <p class="mb-0"><%= @task.details %></p>
+    <div>
+      <%= link_to edit_task_path(@task) do %>
+        <i class="fa-solid fa-pen-to-square"></i>
+      <% end %>
+      <%= link_to task_path(@task), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+        <i class="fa-sharp fa-solid fa-trash"></i>
+      <% end %>
+    </div>
+  </div>
+  <%= link_to "Back to to-do-list", tasks_path %>
+</div>
